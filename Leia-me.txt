@@ -1,0 +1,46 @@
+ Passos para instalar
+1º Instalar o VSCODE
+2º instalar a ultima versão de phyton (Microsoft Store ou no site python.org)
+3º Instalar as bibliotecas com rodando o script "Instalador de bibliotecas.cmd" ou "Instalador de bibliotecas (py -m pip)"
+4º Verificar se todas as bibliotecas foram instaladas corretamente
+5º Ao preencher a tabela, respeitar a faixa de AREA de memória abaixo, para o gerador funcionar com IHMs Basic e Comfort
+    DI              1000
+    ACM             2000
+    DCM             3000
+    DXV             4000
+    AXV             5000
+    AV              6000
+    AREA            7000
+    TOOGLE          8000
+    LVL             9000
+    PID             10000
+    T20		    11000
+    OUTROS          0-999
+6º Utilizar o excel "LISTA DE ELEMENTOS.xlsx" disponibilizado (não renomear)
+7º Preencher as abas "Lista de IO" e "LISTA DE MEMÓRIA" baseado em seu projeto.
+8º Após preencher, salvar o excel dentro da pasta "Gerador de Códigos" (não salvar dentro de subpasta ou qualquer outra pasta)
+9º Iniciar o script no Python e executar na seguinte sequência:
+	1) Clicar em "Abrir arquivo" e selecionar a "LISTA DE ELEMENTOS.xlsx" localizada dentro da pasta "Gerador de Códigos"
+	2) Clicar em "Gerar Arquivos"
+	3) Clicar em "Gerar Alarmes"
+	4) Clicar em "Gerar Tags PLC"
+	5) Clicar em "Gerar Tags HMI"
+10º Os arquivos serão gerados na pasta "seu diretório\GERADOR\GENERATED"
+11º No TIA Portal, habilitar System Tags
+12º Importe os arquivos Source para o projeto no TIA Portal
+12º Gerar na seguinte ordem:
+	1) FBs e compilar
+	2) FCs e compilar
+	3) DBs e compilar
+13º Em seguida, use a "Ferramenta para renomear (Batelada)" para renomear os blocos de acordo com as tags do projeto:
+	1) Abra o código no VS Code
+	2) Clique na janela do Tia Portal e selecione o primeiro bloco a ser renomeado
+	3) Em seguida, clique na janela do VS Code e execute o script (não mexer no mouse e nem teclado enquanto o script executa)
+	4) Aguardar a execução do script
+	5) Caso algum bloco fique sem ser renomeado, clique uma vez no bloco e execute novamente o script
+
+14º Foque na sequencia de passos, cálculos e IHM
+
+
+Obs: para incluir tags reservas, incluir no formato Reserva 1, Reserva 2, etc. Se todas estiverem somente com o nome de "RESERVA", apenas uma tag será criada.
+Obs2: a tag Current_User_Name é gerada automaticamente na IHM, porém, é necessário linkar o usuário a essa tag em "Scheduled Tasks"
