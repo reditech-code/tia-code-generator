@@ -25,6 +25,9 @@
 	3) Clicar em "Gerar Alarmes"
 	4) Clicar em "Gerar Tags PLC"
 	5) Clicar em "Gerar Tags HMI"
+	6) Clicar em "Gerar Tags Objects"
+	7) Clicar em "Gerar Tags Index"
+	8) Clicar em "Gerar Textos IHM"
 10º Os arquivos serão gerados na pasta "seu diretório\GERADOR\GENERATED"
 11º No TIA Portal, habilitar System Tags
 12º Importe os arquivos Source para o projeto no TIA Portal
@@ -38,8 +41,13 @@
 	3) Em seguida, clique na janela do VS Code e execute o script (não mexer no mouse e nem teclado enquanto o script executa)
 	4) Aguardar a execução do script
 	5) Caso algum bloco fique sem ser renomeado, clique uma vez no bloco e execute novamente o script
+14º Crie a conexão da IHM com o PLC com o nome "HMI_Connection_1"
+15º Importar as tags HMI, Objects e Index da IHM
+16º Importar a lista de alarmes da IHM
+17º Importar a lista "Textos_IHM_Passo1" 
+18º Importar a lista "Textos_IHM_Passo2"
 
-14º Foque na sequencia de passos, cálculos e IHM
+19º Foque na sequencia de passos, cálculos e IHM
 
 
 Obs: para incluir tags reservas, incluir no formato Reserva 1, Reserva 2, etc. Se todas estiverem somente com o nome de "RESERVA", apenas uma tag será criada.
