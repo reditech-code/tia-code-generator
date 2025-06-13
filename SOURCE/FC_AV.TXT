@@ -1,0 +1,56 @@
+FUNCTION FCPOSICAO : Void
+TITLE = TXT_FUNÇÃO
+{ S7_Optimized_Access := 'TRUE' }
+AUTHOR : 'Caio Ribeiro'
+//COMENTARIO
+VERSION : 0.1
+
+BEGIN
+	"DBTAG"(Iw_RawPw:=16#0,
+                Ir_ProcVal:=0.0,
+                Ir_ParRawMax:=27648.0,
+                Ir_ParRawMin:=0.0,
+                Ir_ParRawHwfPerc:=5.0,
+                Ir_ParScMax:=100.0,
+                Ir_ParScMin:=0.0,
+                Ir_ParPulseLoad:=0.0,
+                Ib_EnAlmHMax:=false,
+                Ib_EnAlmHH:=1,
+                Ib_EnWrnH:=1,
+                Ib_EnWrnL:=1,
+                Ib_EnAlmLL:=1,
+                Ib_EnAlmLMin:=false,
+                Ib_DevFlt:=false,
+                Ib_DisAlmWrn:=false,
+                Ib_ExtPulse:=false,
+                Iw_Cfg:=16#0000,
+                Or_ProcVal=>"DBTAG".Or_ProcVal,
+	        Or_VolTot=>"DBTAG".Or_VolTot,
+	        Or_VolRst=>"DBTAG".Or_VolRst,
+	        Ob_Alm=>"DBTAG".Ob_Alm,
+	        Ob_Wrn=>"DBTAG".Ob_Wrn,
+	        Ob_AlmDevFlt=>"DBTAG".Ob_AlmDevFlt,
+	        Ob_LvlHMax=>"DBTAG".Ob_LvlHMax,
+	        Ob_LvlHH=>"DBTAG".Ob_LvlHH,
+	        Ob_LvlH=>"DBTAG".Ob_LvlH,
+	        Ob_LvlL=>"DBTAG".Ob_LvlL,
+	        Ob_LvlLL=>"DBTAG".Ob_LvlLL,
+	        Ob_LvlLMin=>"DBTAG".Ob_LvlLMin,
+	        Ob_AlmHMax=>"DBTAG".Ob_AlmHMax,
+	        Ob_AlmHH=>"DBTAG".Ob_AlmHH,
+	        Ob_WrnH=>"DBTAG".Ob_WrnH,
+	        Ob_WrnL=>"DBTAG".Ob_WrnL,
+	        Ob_AlmLL=>"DBTAG".Ob_AlmLL,
+	        Ob_AlmLMin=>"DBTAG".Ob_AlmLMin,
+	        Ob_SavPar=>"DBTAG".Ob_SavPar,
+	        Odi_HmiSta=>"DBTAG".Odi_HmiSta,
+	        Odi_HmiStaInd=>"DBTAG".Odi_HmiStaInd,
+	        Odi_HmiAlm=>"DBTAG".Odi_HmiAlm,
+	        Oi_HmiAlm=>"DBTAG".Oi_HmiAlm,
+                Ow_DCSSta=>"DBTAG".Ow_DCSSta,
+	        IOr_SimVal:="DBTAG".IOr_SimVal,
+	        IOdi_HmiCmd:="DBTAG".IOdi_HmiCmd,
+	        IO_AreaCmd:="DB_AREA".Ou_AreaCmd,
+	        IO_AreaFb:="DB_AREA".AreaFb);
+	
+END_FUNCTION

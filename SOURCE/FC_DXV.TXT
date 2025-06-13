@@ -1,0 +1,49 @@
+FUNCTION FCPOSICAO : Void
+TITLE = Titulo
+{ S7_Optimized_Access := 'TRUE' }
+AUTHOR : 'Caio Ribeiro'
+//COMENTARIO
+VERSION : 0.1
+   VAR_TEMP 
+      b_AutoOpen : Bool;
+      b_AutoClose : Bool;
+      by_Interlock : Byte;
+   END_VAR
+
+BEGIN
+
+	"FC_UTIL_Interlock"(Ib_In1:=false,
+	                    Ib_In2:=false,
+	                    Ib_In3:=false,
+	                    Ib_In4:=false,
+	                    Ib_In5:=false,
+	                    Oby_Out=>#by_Interlock);
+
+    "DBTAG"(Ib_AutPos1:="DBTAG".Ib_AutPos1,
+            Ib_AutPos0:="DBTAG".Ib_AutPos0,
+            Ib_FbPos1:="DBTAG".Ib_FbPos1,
+            Ib_FbPos0:="DBTAG".Ib_FbPos0,
+            Ii_ParTFb:="DBTAG".Ii_ParTFb,
+            Iby_Saf:="DBTAG".Iby_Saf,
+            Iby_IlOn:=#by_Interlock,
+            Iby_IlOff:="DBTAG".Iby_IlOff,
+            Ib_DisAlmWrn:="DBTAG".Ib_DisAlmWrn,
+            Iby_CfgActionAlm:="DBTAG".Iby_CfgActionAlm,
+            Iw_Cfg:="DBTAG".Iw_Cfg,
+            Ob_Pos1=>"DBTAG".Ob_Pos1,
+            Ob_Pos0=>"DBTAG".Ob_Pos0,
+            Ob_Stp=>"DBTAG".Ob_Stp,
+            Ob_Alm=>"DBTAG".Ob_Alm,
+            Ob_StaPos1=>"DBTAG".Ob_StaPos1,
+            Ob_StaPos0=>"DBTAG".Ob_StaPos0,
+            Odi_HmiSta=>"DBTAG".Odi_HmiSta,
+            Odi_HmiAlm=>"DBTAG".Odi_HmiAlm,
+            Odi_ActCouRst=>"DBTAG".Odi_ActCouRst,
+            Odi_ActCouTot=>"DBTAG".Odi_ActCouTot,
+            Oi_HmiAlm=>"DBTAG".Oi_HmiAlm,
+            Oi_HMIStaInd=>"DBTAG".Oi_HMIStaInd,
+            IOdi_HmiCmd:="DBTAG".IOdi_HmiCmd,
+            IO_AreaCmd:="DB_AREA".Ou_AreaCmd,
+            IO_AreaFb:="DB_AREA".AreaFb);
+
+END_FUNCTION

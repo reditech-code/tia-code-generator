@@ -1,0 +1,12 @@
+﻿DATA_BLOCK DBPOSICAO
+TITLE = Titulo
+{ S7_Optimized_Access := 'FALSE' }
+AUTHOR : 'Caio Ribeiro'
+//COMENTARIO
+VERSION : 0.0
+"FB_UM_Mode"
+
+BEGIN
+  
+
+END_DATA_BLOCK

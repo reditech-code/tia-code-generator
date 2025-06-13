@@ -1,0 +1,12 @@
+﻿DATA_BLOCK DBPOSICAO
+{ S7_Optimized_Access := 'FALSE' }
+AUTHOR : 'Caio Ribeiro'
+//COMENTARIO
+VERSION : 0.0
+"FB_CM_DI"
+
+BEGIN
+  
+
+END_DATA_BLOCK
+

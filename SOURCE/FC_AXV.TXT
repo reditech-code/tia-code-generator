@@ -1,0 +1,52 @@
+﻿FUNCTION FCPOSICAO : Void
+TITLE = Titulo
+{ S7_Optimized_Access := 'TRUE' }
+AUTHOR : 'WNC'
+VERSION : 0.1
+//COMENTARIO
+   VAR_TEMP 
+      by_InterlockOpen : Byte;
+      by_InterlockClose : Byte;
+      by_safeinterlock : Byte;
+   END_VAR
+
+
+BEGIN
+	
+	"DBTAG"(Ib_FbPosOpn:="DBTAG".Ob_Opn,
+                 Ib_FbPosCls:="DBTAG".Ob_Cls,
+                 Ir_ActPos:="DBTAG".Ir_ActPos,
+                 Ir_ParAutSp:=0.0,
+                 Ir_ParMaxPos:="DBTAG".Ir_ParMaxPos,
+                 Ir_ParMinPos:="DBTAG".Ir_ParMinPos,
+                 Ir_ParCtlDev:="DBTAG".Ir_ParCtlDev,
+                 Ir_ParSafPos:="DBTAG".Ir_ParSafPos,
+                 Ir_ParMaxRaw:="DBTAG".Ir_ParMaxRaw,
+                 Ir_ParMinRaw:="DBTAG".Ir_ParMinRaw,
+                 Ii_ParTO:="DBTAG".Ii_ParTO,
+                 Iby_Saf:=16#00,
+                 Iby_IlOn:=#by_InterlockOpen,
+                 Iby_IlOff:=#by_InterlockClose,
+                 Ib_Pls1S:="Clock_1Hz",
+                 Ib_DisAlmWrn:="DBTAG".Ib_DisAlmWrn,
+                 Iw_Cfg:=16#0000,
+                 Or_SpOut=>"DBTAG".Or_SpOut,
+                 Ow_SpRaw=>"DBTAG".Ow_SpRaw,
+                 Ob_Opn=>"DBTAG".Ob_Opn,
+                 Ob_Cls=>"DBTAG".Ob_Cls,
+                 Ob_PosOk=>"DBTAG".Ob_PosOk,
+                 Ob_Alm=>"DBTAG".Ob_Alm,
+                 Ob_StaOpn=>"DBTAG".Ob_StaOpn,
+                 Ob_StaCls=>"DBTAG".Ob_StaCls,
+                 Or_StaPos=>"DBTAG".Or_StaPos,
+                 Odi_HmiSta=>"DBTAG".Odi_HmiSta,
+                 Oi_HmiAlm=>"DBTAG".Oi_HmiAlm,
+                 Odi_HmiAlm=>"DBTAG".Odi_HmiAlm,
+                 IOr_ManSP:="DBTAG".IOr_ManSP,
+                 IOr_SimPos:="DBTAG".IOr_SimPos,
+                 IOdi_HmiCmd:="DBTAG".IOdi_HmiCmd,
+                 IO_AreaCmd:="DB_AREA".AreaCmd,
+                 IO_AreaFb:="DB_AREA".AreaFb);
+
+END_FUNCTION
+

@@ -1,0 +1,62 @@
+﻿FUNCTION FCPOSICAO : Void
+TITLE = Titulo
+{ S7_Optimized_Access := 'TRUE' }
+AUTHOR : 'Caio Ribeiro'
+//COMENTARIO
+VERSION : 0.1
+   VAR_TEMP 
+      by_Interlock : Byte;
+      by_safeinterlock : Byte;
+   END_VAR
+
+
+BEGIN
+	"FC_UTIL_Interlock"(Ib_In1:=false,
+	                    Ib_In2:=false,
+	                    Ib_In3:=false,
+	                    Ib_In4:=false,
+	                    Ib_In5:=false,
+	                    Oby_Out=>#by_Interlock);
+
+	"DBTAG"(Ib_AutFwd:="DBTAG".Ib_AutFwd,
+                 Ib_AutRev:=false,
+                 Ib_FbFwd:="DBTAG".Ib_FbFwd,
+                 Ib_FbRev:=false,
+                 Ib_Is:=false,
+                 Ib_Mps:="DBTAG".Ib_Mps,
+                 Ib_DevFlt:=false,
+                 Ib_DrwTest:=FALSE,
+                 Ib_CommFault:=TRUE,
+                 Ib_FbRem:=false,
+                 Ii_ParTFb:=5,
+                 Ii_ParTToRun:=0,
+                 Iby_Saf:=#by_safeinterlock,
+                 Iby_IlOn:=by_Interlock,
+                 Ib_DisAlmWrn:=false,
+                 Iw_Cfg:=16#0001,
+                 Iw_InstCurr:=0.0,
+                 Iw_ErrCod:=0,
+                 Ob_Fwd=>"DBTAG".Ob_Fwd,
+                 Ob_Rev=>"DBTAG".Ob_Rev,
+                 Ob_Off=>"DBTAG".Ob_Off,
+                 Ob_Alm=>"DBTAG".Ob_Alm,
+                 Ob_StaFwd=>"DBTAG".Ob_StaFwd,
+                 Ob_StaRev=>"DBTAG".Ob_StaRev,
+                 Ob_StaOff=>"DBTAG".Ob_StaOff,
+                 Odi_HmiSta=>"DBTAG".Odi_HmiSta,
+                 Oi_HmiStaInd=>"DBTAG".Oi_HmiStaInd,
+                 Odi_HmiAlm=>"DBTAG".Odi_HmiAlm,
+                 Odi_ActCouRst=>"DBTAG".Odi_ActCouRst,
+                 Odi_ActCouTot=>"DBTAG".Odi_ActCouTot,
+                 Odi_RunTimRst=>"DBTAG".Odi_RunTimRst,
+                 Odi_RunTimTot=>"DBTAG".Odi_RunTimTot,
+                 Oi_HmiAlm=>"DBTAG".Oi_HmiAlm,
+                 Or_InstCurr=>"DBTAG".Or_InstCurr,
+                 Oi_ErrCod=>"DBTAG".Oi_ErrCod,
+                 Ob_Remote=>"DBTAG".Ob_Remote,
+                 Ow_DCSSta=>"DBTAG".Ow_DCSSta,
+                 IOdi_HmiCmd:="DBTAG".IOdi_HmiCmd,
+                 IO_AreaCmd:="DB_AREA".Ou_AreaCmd,
+                 IO_AreaFb:="DB_AREA".AreaFb);
+	
+END_FUNCTION

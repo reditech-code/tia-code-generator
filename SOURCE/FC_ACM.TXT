@@ -1,0 +1,112 @@
+﻿FUNCTION FCPOSICAO : Void
+TITLE = Titulo
+{ S7_Optimized_Access := 'TRUE' }
+AUTHOR : 'Caio Ribeiro'
+VERSION : 0.1
+//COMENTARIO
+   VAR_TEMP 
+      by_Interlock : Byte;
+      by_safeinterlock : Byte;
+   END_VAR
+
+
+BEGIN
+	"FC_UTIL_Interlock"(Ib_In1 := false,
+	                    Ib_In2 := false,
+	                    Ib_In3 := false,
+	                    Ib_In4 := false,
+	                    Ib_In5 := false,
+	                    Oby_Out => #by_Interlock);
+	
+	"DBTAG"(Ib_AutFwd:="DBTAG".Ib_AutFwd,
+                 Ib_AutRev:=false,
+                 Ib_FbFwd:="DBTAG".Ib_FbFwd,
+                 Ib_FbRev:=false,
+                 ib_Is:=false,
+                 Ib_Mps:="DBTAG".Ib_Mps,
+                 Ib_DevFlt:=false,
+                 Ib_AlarmES:=false,
+                 Ib_DrawerInserted:=false,
+                 Ib_DrawerInTest:=false,
+                 Ib_Remote_Mode:=false,
+                 Ib_OverVoltage:=false,
+                 Iby_Saf:=#by_safeinterlock,
+                 Iby_IlFwd:=#by_Interlock,
+                 Iby_IlRev:=16#0,
+                 Ib_Pls1S:="Clock_1Hz",
+                 Ir_ActSpd:=0.0,
+                 Ir_ParMaxSpd:=100.0,
+                 Ir_ParMinSpd:=0.0,
+                 Ir_ParCtlDev:=0.0,
+                 Ir_ParMaxRaw:=0.0,
+                 Ir_ParMinRaw:=0.0,
+                 Ir_ParSafSpd:=0.0,
+                 Ii_ParTO:=0,
+                 Ii_ParTFb:=0,
+                 Ii_ParTToRun:=0,
+                 Ib_DisAlmWrn:=false,
+                 Iw_Cfg:="DBTAG".Iw_Cfg,
+                 Or_SpOut=>"DBTAG".Or_SpOut,
+                 Ow_SpRaw=>"DBTAG".Ow_SpRaw,
+                 Ob_Fwd=>"DBTAG".Ob_Fwd,
+                 Ob_Rev=>"DBTAG".Ob_Rev,
+                 Ob_Off=>"DBTAG".Ob_Off,
+                 Ob_StaFwd=>"DBTAG".Ob_StaFwd,
+                 Ob_StaRev=>"DBTAG".Ob_StaRev,
+                 Ob_StaOff=>"DBTAG".Ob_StaOff,
+                 Ob_SpdOk=>"DBTAG".Ob_SpdOk,
+                 Or_StaSpd=>"DBTAG".Or_StaSpd,
+                 Ob_Alm=>"DBTAG".Ob_Alm,
+                 Ob_Wrn=>"DBTAG".Ob_Wrn,
+                 Odi_HmiSta=>"DBTAG".Odi_HmiSta,
+                 Oi_HmiStaInd=>"DBTAG".Oi_HmiStaInd,
+                 Odi_HmiAlm=>"DBTAG".Odi_HmiAlm,
+                 Odi_ActCouRst=>"DBTAG".Odi_ActCouRst,
+                 Odi_ActCouTot=>"DBTAG".Odi_ActCouTot,
+                 Odi_RunTimRst=>"DBTAG".Odi_RunTimRst,
+                 Odi_RunTimTot=>"DBTAG".Odi_RunTimTot,
+                 Oi_HmiAlm=>"DBTAG".Oi_HmiAlm,
+                 Ow_DCSSta=>"DBTAG".Ow_DCSSta,
+                 IOdi_HmiCmd:="DBTAG".IOdi_HmiCmd,
+                 IOr_ManSP:="DBTAG".IOr_ManSP,
+                 IOr_AutSp:="DBTAG".IOr_AutSP,
+                 IOr_SimSpd:="DBTAG".IOr_Simspd,
+                 IO_AreaCmd:="DB_AREA".Ou_AreaCmd,
+                 IO_AreaFb:="DB_AREA".AreaFb);
+	
+	"DB_G120C_Tel20_DATA"(EM_Stop := false,
+	                              Release := True,
+	                              Mode := True,
+	                              Start_FW := "DBTAG".Ob_Fwd,
+	                              Start_RV := false,
+	                              Start_Man_FW := false,
+	                              Start_MAN_RV := false,
+	                              Reset := "DBTAG".b_RstAlm,
+	                              SP := 50.0,
+	                              SP_Man := 50.0,
+	                              G120_ZSW := "DB_G120C_Tel20_DATA".G120_ZSW,
+	                              G120_NIST_A := "DB_G120C_Tel20_DATA".G120_NIST_A,
+	                              G120_IAIST := 0,
+	                              G120_MIST := 0,
+	                              G120_F_Ref := 60.0,
+	                              G120_I_Ref := 11.3,
+	                              G120_T_Ref := 0.0,
+	                              Rdy_Start => "DB_G120C_Tel20_DATA".Rdy_Start,
+	                              Rdy => "DB_G120C_Tel20_DATA".Rdy,
+	                              Enabled => "DB_G120C_Tel20_DATA".Enabled,
+	                              Fault => "DB_G120C_Tel20_DATA".Fault,
+	                              OFF2 => "DB_G120C_Tel20_DATA".OFF2,
+	                              OFF3 => "DB_G120C_Tel20_DATA".OFF3,
+	                              Alarm => "DB_G120C_Tel20_DATA".Alarm,
+	                              SP_OK => "DB_G120C_Tel20_DATA".SP_OK,
+	                              Dir => "DB_G120C_Tel20_DATA".Dir,
+	                              EM_Fault => "DB_G120C_Tel20_DATA".EM_Fault,
+	                              G120_STW => "DB_G120C_Tel20_DATA".G120_STW,
+	                              G120_NSOLL_A => "DB_G120C_Tel20_DATA".G120_NSOLL_A,
+	                              Freq => "DB_G120C_Tel20_DATA".Freq,
+	                              Curr => "DB_G120C_Tel20_DATA".Curr,
+	                              Torq => "DB_G120C_Tel20_DATA".Torq);
+	
+	
+END_FUNCTION
+

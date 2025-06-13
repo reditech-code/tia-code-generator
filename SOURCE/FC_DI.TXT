@@ -1,0 +1,29 @@
+﻿FUNCTION FCPOSICAO : Void
+TITLE = Titulo
+{ S7_Optimized_Access := 'TRUE' }
+AUTHOR : 'Caio Ribeiro'
+//COMENTARIO
+VERSION : 0.1
+
+BEGIN
+	"DBTAG"(Ib_InRaw:="DBTAG".Ib_InRaw,
+	                      Ib_Inv:=FALSE,
+	                      Ii_ParTOn:=0,
+	                      Ii_ParTOff:=0,
+	                      Ib_EnAlmIfzero:=FALSE,
+	                      Ib_EnAlmIfOne:=FALSE,
+	                      Ib_EnWrnIfzero:=FALSE,
+	                      Ib_EnWrnIfOne:=TRUE,
+	                      Ib_DisAlmWrn:=FALSE,
+	                      Iw_Cfg:=16#0000,
+	                      Ob_Out=>"DBTAG".Ob_Out,
+	                      Ob_Alm=>"DBTAG".Ob_Alm,
+	                      Ob_Wrn=>"DBTAG".Ob_Wrn,
+	                      Odi_HmiSta=>"DBTAG".Odi_HmiSta,
+	                      Odi_HmiAlm=>"DBTAG".Odi_HmiAlm,
+	                      Oi_HmiAlm=>"DBTAG".Oi_HmiAlm,
+	                      IOdi_HmiCmd:="DBTAG".IOdi_HmiCmd,
+	                      IO_AreaCmd:="DB_AREA".Ou_AreaCmd,
+	                      IO_AreaFb:="DB_AREA".AreaFb);
+	
+END_FUNCTION

@@ -1,0 +1,12 @@
+﻿DATA_BLOCK DBPOSICAO
+{ S7_Optimized_Access := 'FALSE' }
+AUTHOR : Reditech
+FAMILY : Typical
+VERSION : 0.0
+NON_RETAIN
+"FB_CM_AXV"
+
+BEGIN
+
+END_DATA_BLOCK
+

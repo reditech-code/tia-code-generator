@@ -1,0 +1,13 @@
+﻿DATA_BLOCK DBPOSICAO
+TITLE = Titulo
+{ S7_Optimized_Access := 'FALSE' }
+AUTHOR : 'Gustavo Lourenção'
+VERSION : 0.0
+NON_RETAIN
+"G120C_Tel20"
+
+BEGIN
+
+
+END_DATA_BLOCK
+
